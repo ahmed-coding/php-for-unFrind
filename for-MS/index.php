@@ -14,11 +14,6 @@
 <!-- هذه الصفحة الرئيسيه ال Home page   -->
 
 <body dir="rtl">
-    <?php
-
-    include('db_conn.php');
-
-    ?>
 
     <!-- هذا ال div سبرنا له كلاس اسمه header وسبرنا الصوره اللي حق ديزني اللي اول الموقع ك خلفيه لهذا  ال div في ملف ال css-->
     <div class="header">
@@ -104,6 +99,8 @@
             <div class="contant">
                 <p>تصميم ملاك سريع & سهام بركات </p>
             </div>
+
+
         </div>
     </div>
 </body>
