@@ -25,7 +25,7 @@ $con = mysqli_connect($db_host, $db_user, null, $db_name, $db_port);
 
 $query = <<<"query"
 CREATE TABLE IF NOT EXISTS movies(id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), description VARCHAR(255), video_url VARCHAR(255),image_url VARCHAR(255));
-CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), email VARCHAR(255), is_superuser BIT,password VARCHAR(50));
+CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), email VARCHAR(255) UNIQUE, is_superuser BIT,password VARCHAR(50));
 query;
 
 if (!mysqli_query($con, $query)) {

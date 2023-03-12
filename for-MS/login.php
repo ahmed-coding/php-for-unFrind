@@ -13,6 +13,18 @@ if (isset($_POST['submit_login'])) {
     $query = <<<"query"
     SELECT * FROM `users` WHERE password = '$password' and email = '$email';
     query;
+
+    $result = mysqli_query($con, $query);
+    echo $result;
+    if ($result) {
+        $is_superuser = $result['is_superuser'];
+        setcookie("login", true);
+        if (!$is_superuser) {
+            setcookie("login", true);
+            header('Location: index.php');
+        } else {
+        }
+    }
 } elseif (isset($_POST['submit_signup'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -43,6 +55,7 @@ if (isset($_POST['submit_login'])) {
     <title>التكليف_php</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+
 </head>
 
 <body>
