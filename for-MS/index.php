@@ -15,10 +15,12 @@
 
 <body dir="rtl">
 
-    <?php if (!isset($_COOKIE['login'])) {
-        header("location: login.php?login");
-    }
-    ?>
+    <!-- <?php
+            /* if (!isset($_COOKIE['login'])) {
+                header("location: login.php?login");
+            }*/
+            echo ("asd");
+            ?> -->
     <!-- هذا ال div سبرنا له كلاس اسمه header وسبرنا الصوره اللي حق ديزني اللي اول الموقع ك خلفيه لهذا  ال div في ملف ال css-->
     <div class="header">
 

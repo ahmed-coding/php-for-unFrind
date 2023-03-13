@@ -1,52 +1,3 @@
-<?php
-// include_once('db_conn.php');
-
-// $error_message = "";
-// $success_message = "";
-
-// $con = mysqli_connect($db_host, $db_user, null, $db_name, $db_port);
-
-// if (isset($_POST['submit_login'])) {
-//     $email = $_POST['email'];
-//     $password = $_POST['password'];
-
-//     $query = <<<"query"
-//     SELECT * FROM `users` WHERE password = '$password' and email = '$email';
-//     query;
-
-//     $result = mysqli_query($con, $query);
-//     echo $result;
-//     if ($result) {
-//         $is_superuser = $result['is_superuser'];
-//         setcookie("login", true);
-//         if (!$is_superuser) {
-//             header('Location: index.php');
-//         } else {
-//             header("Location: dashboard.php");
-//         }
-//     } else {
-//         $error_message = "User not found chack the data";
-//         header("Location: login.php?login&&login_error=$error_message");
-//     }
-// } elseif (isset($_POST['submit_signup'])) {
-//     $name = $_POST['name'];
-//     $email = $_POST['email'];
-//     $password = $_POST['password'];
-//     $is_superuser = $_POST['is_superuser'];
-//     $query = <<<"query"
-//     INSERT INTO `users` (`id`, `name`, `email`, `is_superuser`, `password`) VALUES (NULL, '$name', '$email', b'$is_superuser', '$password');
-//     query;
-//     if (!mysqli_query($con, $sql)) {
-//         $error_messagee = "error when added: " . mysqli_error($con);
-//         header("Location: login.php?signup&&sign_errorsign_error=$error_message");
-//     } else {
-//         $success_message = "process Successfuly: Go to Login again";
-//         header("Location: login.php?signup&&sign_message=$success_message");
-//     }
-// }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,11 +10,47 @@
 </head>
 
 <body>
+    <?php
+    $db_host = 'localhost';
+    $db_user = 'root';
+    $db_name = 'un_php';
+    $db_port = null;
+    $con = mysqli_connect($db_host, $db_user, null, null);
 
+    if (mysqli_connect_errno()) {
+        die("Error when connected with database and error message" . mysqli_connect_error());
+    }
+
+    $query = "CREATE DATABASE IF NOT EXISTS $db_name;";
+
+    if (mysqli_query($con, $query)) {
+    } else {
+        die('filed on create database');
+    }
+
+    // mysqli_close($con);
+
+    $con = mysqli_connect($db_host, $db_user, null, $db_name);
+
+    $query = "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), email VARCHAR(255) UNIQUE, is_superuser BIT,password VARCHAR(50));";
+
+    if (mysqli_query($con, $query)) {
+    } else {
+        die('filed on create table users');
+    }
+
+    $query = "CREATE TABLE IF NOT EXISTS movies(id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), description VARCHAR(255), video_url VARCHAR(255),image_url VARCHAR(255));";
+    if (mysqli_query($con, $query)) {
+    } else {
+        die('filed on create table movies');
+    }
+    // mysqli_close($con);
+
+    ?>
     <section class="register-photo">
         <div class="form-container">
             <?php if (isset($_GET['signup'])) : ?>
-                <form method="post">
+                <form method="post" action="db_conn.php">
                     <?php if (isset($_GET['sign_error'])) : ?>
                         <div class="d-flex" id="some-message" style="background-color:#e12f54 ;">
                             <div class="content">
@@ -86,7 +73,7 @@
                     <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" name="submit_signup">Sign Up</button></div>
                 </form>
             <?php else : ?>
-                <form method="post">
+                <form method="post" action="db_conn.php">
                     <?php if (isset($_GET['login_error'])) : ?>
                         <div class="d-flex" id="some-message" style="background-color: #e12f54;">
                             <div class="content">
