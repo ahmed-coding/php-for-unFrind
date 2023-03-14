@@ -10,43 +10,7 @@
 </head>
 
 <body>
-    <?php
-    $db_host = 'localhost';
-    $db_user = 'root';
-    $db_name = 'un_php';
-    $db_port = null;
-    $con = mysqli_connect($db_host, $db_user, null, null);
 
-    if (mysqli_connect_errno()) {
-        die("Error when connected with database and error message" . mysqli_connect_error());
-    }
-
-    $query = "CREATE DATABASE IF NOT EXISTS $db_name;";
-
-    if (mysqli_query($con, $query)) {
-    } else {
-        die('filed on create database');
-    }
-
-    // mysqli_close($con);
-
-    $con = mysqli_connect($db_host, $db_user, null, $db_name);
-
-    $query = "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), email VARCHAR(255) UNIQUE, is_superuser BIT,password VARCHAR(50));";
-
-    if (mysqli_query($con, $query)) {
-    } else {
-        die('filed on create table users');
-    }
-
-    $query = "CREATE TABLE IF NOT EXISTS movies(id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), description VARCHAR(255), video_url VARCHAR(255),image_url VARCHAR(255));";
-    if (mysqli_query($con, $query)) {
-    } else {
-        die('filed on create table movies');
-    }
-    // mysqli_close($con);
-
-    ?>
     <section class="register-photo">
         <div class="form-container">
             <?php if (isset($_GET['signup'])) : ?>
@@ -71,7 +35,10 @@
                     <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
                     <div class="mb-3">Super User status<input class=" btn btn-primary " type="checkbox" name="is_superuser"></div>
                     <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" name="submit_signup">Sign Up</button></div>
+                    <p class="text-center">Have Account?<a href="login.php?login">Login!</a> </p>
+
                 </form>
+
             <?php else : ?>
                 <form method="post" action="db_conn.php">
                     <?php if (isset($_GET['login_error'])) : ?>
@@ -86,10 +53,13 @@
                     <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
                     <!-- <div class="mb-3"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div> -->
                     <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" name="submit_login">login</button></div>
+                    <p class="text-center">or <a href="login.php?signup">Create a New account?</a> </p>
+
                 </form>
-            <?php endif; ?>
+
         </div>
-        <p class="text-center">or <a href="login.php?signup">Create a New account?</a> </p>
+    <?php endif; ?>
+
     </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
