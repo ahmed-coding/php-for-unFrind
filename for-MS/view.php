@@ -1,74 +1,87 @@
+<?php
+include('db_conn.php');
+$id = 0;
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
+$result = mysqli_query($con, "SELECT * FROM movies WHERE id = $id");
+mysqli_close($con);
+$result = mysqli_fetch_assoc($result);
+
+?>
+
 <!DOCTYPE html>
 <html lang="ar">
 
 <head>
+    <!-- هذا علميد يتعرف ع اللغه العربيه -->
     <meta charset="UTF-8">
+    <!-- هذا حق ملف الايقونات اللي عملناهن اخر الصفحه  -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css2/styles.min.css">
+    <!-- هذا للملف حق ال css اللي فعلناه داخل ملف اسمه css واسمه style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-
-    <link rel="stylesheet" href="css/all.min.css">
-    <title>RATATOUILLE-MOVIES</title>
+    <title><?php echo $result['name']; ?>-MOVIES</title>
 </head>
 
-<body dir="rtl">
-    <!-- سبنا كلاس اسمة container علشان يمسك العناصر كلهن في النص علميد لايرتبشين -->
-    <div class="container">
-        <!-- وهاذا حق الزر اللي يضغطه ويرجعه للصفحه الرئيسيه -->
-        <a href="index.html"><button>الرئيسية</button></a>
-    </div>
+<body>
+    <?php
+
+    if (!isset($_COOKIE['login'])) {
+        header("location: login.php?login");
+    }
+    echo ("asd");
+    ?>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href="index.php" style="color: var(--bs-blue);"><br>Movies لمشاهدة الافلام<br><br></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.php">عرض الصفحة الرئيسية</a></li>
+                    <?php
+                    if (isset($_COOKIE['is_superuser'])) {
+                        echo '<li class="nav-item"><a class="nav-link active" href="dashboard.php">اضافة فيلم</a></li>';
+                    }
+                    ?>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
     <h1>Movies لمشاهدة الافلام</h1>
 
-    <!-- هذا الجزء حق الفيديو حق الفيلم  -->
     <div class="video">
         <div class="container">
-            <!-- هذا الفيديو  -->
-            <video controls poster="image/Ratatouille/photo_2022-10-15_00-12-48.jpg" muted>
-                <source src="image/Ratatouille/Ratatouille (2007) - Anton Ego Tastes Ratatouille - Flashback Scene [HD].mp4" type="video/mp4">
+            <video controls poster="<?php echo $result['image_url']; ?>" muted>
+                <source src="<?php echo $result['video_url']; ?>" type="video/mp4">
             </video>
-            <h2> فيلم RATATOUILLE</h2>
+            <h2> فيلم <?php echo $result['name']; ?></h2>
         </div>
     </div>
 
-    <!-- وهذا الجزء حق معلومات الفيلم contant-video  -->
-    <div class="contant-video">
+    <div class="contant-video pb-5" dir='rtl'>
         <div class="container">
-            <!-- هنا اسم الفيلم  -->
-            <h2>قصة الفلم</h2>
-            <!-- هنا القصه حق الفيلم -->
-            <p>قصه فلم الفار الطباخ...
-                يحلم الفأر (ريمي ) بأن يكون طباخاً ماهراً، وعقب إنفصاله عن عائلته بعد أن اكتشف وكرها، ليصل إلى باريس، ثم
-                يستقر في مطبخ
-                مطعم فاخر، يلتحق الشاب (بلنجويني) للعمل بالمطعم، ويستطيع (ريمي) التحكم فيه عن طريق التحكم في تحريك شعره،
-                مما يجعله
-                طباخاً ماهراً، ويثير غيرة زملائه الطباخين.
-            </p>
-            <!-- وهذا الزر اللي لما تضغطه يشلك تشوف الفيلم من ال youtube -->
-            <a href="https://youtu.be/bNwfZi_EQ3I" target="_blank"><button>مشاهده</button></a>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="col-item">
+                        <div class="photo me-3">
+                            <img src="<?php echo $result['image_url']; ?>" class="img-responsive d-block m-auto w-100" alt="a" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+
+                    <h2>قصة الفلم</h2>
+                    <p><?php echo $result['description']; ?>
+                    </p>
+                    <a href="<?php echo $result['link']; ?>" target="_blank"><button>مشاهده</button></a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="container">
-        <h2>صور الفلم</h2>
-    </div>
-    <!-- هذا الجزء حق صور الفيلم  -->
-    <div class="contant-image">
-        <!-- سبرنا كلاس اسمة container علشان يمسك العناصر كلهن في النص علميد لايرتبشين -->
-        <div class="container">
-            <!-- سبرنا كلاس اسمه image علشان نقدر ننسقهن في ملف ال Css -->
-            <div class="image">
-                <img src="image/Ratatouille/photo_2022-10-15_00-10-36.jpg" alt="">
-            </div>
-            <div class="image">
-                <img src="image/Ratatouille/photo_2022-10-15_00-11-15.jpg" alt="">
-            </div>
-            <div class="image">
-                <img src="image/Ratatouille/photo_2022-10-15_00-11-21.jpg" alt="">
-            </div>
-            <div class="image">
-                <img src="image/Ratatouille/photo_2022-10-15_00-12-48.jpg" alt="">
-            </div>
-        </div>
-    </div>
 
 </body>
 

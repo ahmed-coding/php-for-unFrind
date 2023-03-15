@@ -1,3 +1,11 @@
+<?php
+include('db_conn.php');
+$result = mysqli_query($con, "SELECT * FROM movies");
+mysqli_close($con);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,10 +28,9 @@
     <!-- <div class="header"></div> -->
 
     <!-- <?php
-            /*
             if (!isset($_COOKIE['login'])) {
                 header("location: login.php?login");
-            }*/
+            }
             echo ("asd");
             ?> -->
     <!-- هذا ال div سبرنا له كلاس اسمه header وسبرنا الصوره اللي حق ديزني اللي اول الموقع ك خلفيه لهذا  ال div في ملف ال css-->
@@ -32,6 +39,11 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.php">عرض الصفحة الرئيسية</a></li>
+                    <?php
+                    if (isset($_COOKIE['is_superuser'])) {
+                        echo '<li class="nav-item"><a class="nav-link active" href="dashboard.php">اضافة فيلم</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -55,25 +67,24 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <a href="view.php">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <img src="assets/img/iphone6.jpg" class="img-responsive d-block m-auto" alt="a" />
-                                        </div>
-                                        <div class="info">
-                                            <div class="row">
-                                                <div class="price">
-                                                    <h5 class="text-center">Sample Product</h5>
-                                                </div>
+                            <?php
+                            foreach ($result as $row) :
+                            ?>
+                                <!--  -->
+                                <div class="col-sm-4 mb-3">
+                                    <a href="<?php echo 'view.php?id=' . $row['id']; ?>">
+                                        <div class="card">
+                                            <img src="<?php echo $row['image_url']; ?>" class="card-img-top" style="height: 320px ;" alt="a" />
+                                            <div class="card-body">
+                                                <h5 class="card-text text-center"><?php echo $row['name']; ?></h5>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-
-                            </div>
-
+                                    </a>
+                                </div>
+                            <?php endforeach ?>
                         </div>
+                        <!--  -->
+
                     </div>
 
                 </div>

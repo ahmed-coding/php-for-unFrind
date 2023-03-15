@@ -1,1 +1,4 @@
 image/
+media/images/*.png
+# media/images/*.jpg
+media/videos/*.mp4

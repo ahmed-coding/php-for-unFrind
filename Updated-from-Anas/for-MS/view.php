@@ -2,7 +2,7 @@
 <html lang="ar">
 
 <head>
-    <!-- هذا علميد يتعرف ع اللغه العربيه -->
+   <!-- هذا علميد يتعرف ع اللغه العربيه -->
     <meta charset="UTF-8">
     <!-- هذا حق ملف الايقونات اللي عملناهن اخر الصفحه  -->
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -13,12 +13,11 @@
     <title>RATATOUILLE-MOVIES</title>
 </head>
 
-<body>
-    <!-- <?php
-            /*
+<body >
+     <!-- <?php
             if (!isset($_COOKIE['login'])) {
                 header("location: login.php?login");
-            }*/
+            }
             echo ("asd");
             ?> -->
     <!-- هذا ال div سبرنا له كلاس اسمه header وسبرنا الصوره اللي حق ديزني اللي اول الموقع ك خلفيه لهذا  ال div في ملف ال css-->
@@ -32,7 +31,7 @@
         </div>
     </nav>
 
-
+  
     <h1>Movies لمشاهدة الافلام</h1>
 
     <!-- هذا الجزء حق الفيديو حق الفيلم  -->
@@ -49,34 +48,34 @@
     <!-- وهذا الجزء حق معلومات الفيلم contant-video  -->
     <div class="contant-video pb-5" dir='rtl'>
         <div class="container">
-            <div class="row">
+        <div class="row">
                 <div class="col-sm-3">
-                    <div class="col-item">
-                        <div class="photo">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0rJiqAa-i7Dyqp_RICbHpHlXsYa0n7Ni8MIFYLK5kqY4kqU3gWdotNrnBkl82Vo6QjsM&usqp=CAU" class="img-responsive d-block m-auto" alt="a" />
-                        </div>
+                     <div class="col-item">
+                           <div class="photo">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0rJiqAa-i7Dyqp_RICbHpHlXsYa0n7Ni8MIFYLK5kqY4kqU3gWdotNrnBkl82Vo6QjsM&usqp=CAU" class="img-responsive d-block m-auto" alt="a" />
+                            </div>
                     </div>
                 </div>
                 <div class="col-sm-9">
 
-                    <!-- هنا اسم الفيلم  -->
-                    <h2>قصة الفلم</h2>
-                    <!-- هنا القصه حق الفيلم -->
-                    <p>قصه فلم الفار الطباخ...
-                        يحلم الفأر (ريمي ) بأن يكون طباخاً ماهراً، وعقب إنفصاله عن عائلته بعد أن اكتشف وكرها، ليصل إلى باريس، ثم
-                        يستقر في مطبخ
-                        مطعم فاخر، يلتحق الشاب (بلنجويني) للعمل بالمطعم، ويستطيع (ريمي) التحكم فيه عن طريق التحكم في تحريك شعره،
-                        مما يجعله
-                        طباخاً ماهراً، ويثير غيرة زملائه الطباخين.
-                    </p>
-                    <!-- وهذا الزر اللي لما تضغطه يشلك تشوف الفيلم من ال youtube -->
-                    <a href="https://youtu.be/bNwfZi_EQ3I" target="_blank"><button>مشاهده</button></a>
-                </div>
-            </div>
+                <!-- هنا اسم الفيلم  -->
+            <h2>قصة الفلم</h2>
+            <!-- هنا القصه حق الفيلم -->
+            <p>قصه فلم الفار الطباخ...
+                يحلم الفأر (ريمي ) بأن يكون طباخاً ماهراً، وعقب إنفصاله عن عائلته بعد أن اكتشف وكرها، ليصل إلى باريس، ثم
+                يستقر في مطبخ
+                مطعم فاخر، يلتحق الشاب (بلنجويني) للعمل بالمطعم، ويستطيع (ريمي) التحكم فيه عن طريق التحكم في تحريك شعره،
+                مما يجعله
+                طباخاً ماهراً، ويثير غيرة زملائه الطباخين.
+            </p>
+            <!-- وهذا الزر اللي لما تضغطه يشلك تشوف الفيلم من ال youtube -->
+            <a href="https://youtu.be/bNwfZi_EQ3I" target="_blank"><button>مشاهده</button></a>
+        </div>
         </div>
     </div>
+    </div>
 
-
+   
 </body>
 
 </html>
