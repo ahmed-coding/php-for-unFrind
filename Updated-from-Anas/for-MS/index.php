@@ -4,12 +4,12 @@
 <head>
     <!-- هذا علميد يتعرف ع اللغه العربيه -->
     <meta charset="UTF-8">
+    <!-- هذا للملف حق ال css اللي فعلناه داخل ملف اسمه css واسمه style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- هذا حق ملف الايقونات اللي عملناهن اخر الصفحه  -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/bootstrap2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css2/styles.min.css">
-    <!-- هذا للملف حق ال css اللي فعلناه داخل ملف اسمه css واسمه style.css -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>MOVIES</title>
 </head>
 
@@ -56,24 +56,128 @@
                     <div class="item active">
                         <div class="row">
                             <div class="col-sm-3">
-                                <a href="view.php">
-
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <img src="assets/img/iphone6.jpg" class="img-responsive d-block m-auto" alt="a" />
-                                        </div>
-                                        <div class="info">
-                                            <div class="row">
-                                                <div class="price">
-                                                    <h5 class="text-center">Sample Product</h5>
-                                                </div>
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="assets/img/iphone6.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
                                             </div>
                                         </div>
+
+                                        <div class="clearfix">
+                                        </div>
                                     </div>
-                                </a>
-
+                                </div>
                             </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="assets/img/iphone6.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Product Example</h5>
 
+                                                <h5 class="price-text-color">
+                                                    $249.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="assets/img/iphone6.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Next Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $149.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="assets/img/iphone6.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-item">
+                                    <div class="photo">
+                                        <img src="assets/img/iphone6.jpg" class="img-responsive" alt="a" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="price col-md-6">
+                                                <h5>
+                                                    Sample Product</h5>
+                                                <h5 class="price-text-color">
+                                                    $199.99</h5>
+                                            </div>
+                                            <div class="rating hidden-sm col-md-6">
+                                                <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                                </i><i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -97,6 +201,12 @@
                 <i class="fab fa-linkedin"></i>
                 <i class="fab fa-twitter"></i>
             </div>
+            <!-- وهولا الاسامي -->
+            <div class="contant">
+                <p>تصميم ملاك سريع & سهام بركات </p>
+            </div>
+
+
         </div>
     </div>
 

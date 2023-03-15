@@ -25,12 +25,13 @@
             <div class="illustration">
                 <p style="font-size: 42px;">Add New Movie</p>
             </div>
-            <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name" required />
+            <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name" />
             </div>
             <div class="mb-3"></div>
-            <div class="mb-3"><label class="form-label" style="font-size: 21px;"><strong>Images</strong></label><input class="form-control" type="file" name="image_url" required></div>
-            <div class="mb-3"><label class="form-label" style="font-size: 23px;"><strong>Video</strong><br></label><input class="form-control" type="file" name="video_url" required></div>
-            <div class="mb-3"><textarea class="form-control" placeholder="Description" name="description" required></textarea></div>
+            <div class="mb-3"><label class="form-label" style="font-size: 21px;"><strong>Link For Movie</strong></label><input class="form-control" type="url" name="link" required></div>
+            <div class="mb-3"><label class="form-label" style="font-size: 21px;"><strong>Images</strong></label><input class="form-control" type="file" name="image_url"></div>
+            <div class="mb-3"><label class="form-label" style="font-size: 23px;"><strong>Video</strong><br></label><input class="form-control" type="file" name="video_url"></div>
+            <div class="mb-3"><textarea class="form-control" placeholder="Description" name="description"></textarea></div>
             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit_addNew">Create</button></div>
         </form>
     </section>

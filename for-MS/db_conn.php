@@ -5,6 +5,40 @@ $db_user = 'root';
 $db_name = 'un_php';
 $db_port = null;
 
+
+
+
+
+//From chat GPT for madie
+
+/* $conn = mysqli_connect('localhost', 'username', 'password', 'database');
+
+// Check if a file was uploaded
+
+if (isset($_FILES['file'])) {
+    // Get file data
+    $file_name = $_FILES['file']['name'];
+    $file_size = $_FILES['file']['size'];
+    $file_type = $_FILES['file']['type'];
+    $file_data = file_get_contents($_FILES['file']['tmp_name']);
+
+    // Insert file data into the database
+    $query = "INSERT INTO media (file_name, file_data, file_size, file_type) VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "ssis", $file_name, $file_data, $file_size, $file_type);
+    mysqli_stmt_execute($stmt);
+
+    // Display a success message
+    echo "File uploaded successfully.";
+} else {
+    // Display an error message
+    echo "Error: No file uploaded.";
+}
+
+mysqli_close($conn);
+
+*/
+
 //create database
 $con = mysqli_connect($db_host, $db_user, null, null);
 
@@ -30,7 +64,7 @@ if (mysqli_query($con, $query)) {
     die('filed on create table users');
 }
 
-$query = "CREATE TABLE IF NOT EXISTS movies(id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), description VARCHAR(255), video_url VARCHAR(255),image_url VARCHAR(255));";
+$query = "CREATE TABLE IF NOT EXISTS movies(id INTEGER PRIMARY KEY AUTO_INCREMENT , name VARCHAR(30), description VARCHAR(255), video_url VARCHAR(255),image_url VARCHAR(255), link VARCHAR(255));";
 if (mysqli_query($con, $query)) {
 } else {
     die('filed on create table movies');
@@ -87,6 +121,7 @@ if (isset($_POST['submit_login'])) {
         $error_messagee = "error when added: " . mysqli_error($con);
         header("Location:login.php?signup&&sign_errorsign_error=$error_message");
     }
+} elseif ($_POST['submit_addNew']) {
 } else {
     echo "submit_signup";
 }
