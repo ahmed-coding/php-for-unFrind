@@ -35,7 +35,38 @@ if (isset($_FILES['file'])) {
     echo "Error: No file uploaded.";
 }
 
-mysqli_close($conn);
+
+
+
+// Connect to database
+$conn = mysqli_connect('localhost', 'username', 'password', 'example');
+
+// Query database
+$result = mysqli_query($conn, "SELECT id, name, email FROM users");
+
+// Fetch a row from the result set as an associative array
+$row = mysqli_fetch_assoc($result);
+
+// Access the values in the associative array
+echo "User ID: " . $row['id'] . "<br>";
+echo "Name: " . $row['name'] . "<br>";
+echo "Email: " . $row['email'] . "<br>";
+
+
+
+// Connect to database
+$conn = mysqli_connect('localhost', 'username', 'password', 'example');
+
+// Retrieve file path from database
+$fileId = 1; // Change this to the ID of the file you want to display
+$result = mysqli_query($conn, "SELECT file_path FROM files WHERE id = $fileId");
+$file = mysqli_fetch_assoc($result);
+$filePath = $file['file_path'];
+
+//html
+<img src="<?php echo $filePath; ?>" alt="Image">
+
+
 
 */
 
