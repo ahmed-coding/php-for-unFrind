@@ -177,7 +177,9 @@ mysqli_close($con);
 // echo "</pre>";
 // echo $_POST['email'];
 
+// الاتصال بقاعدة البيانات
 $con = mysqli_connect($db_host, $db_user, '', $db_name, $db_port);
+
 
 if (mysqli_connect_errno()) {
     die("Error when connected with database and error message" . mysqli_connect_error());

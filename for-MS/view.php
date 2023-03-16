@@ -1,11 +1,18 @@
 <?php
+// فتح ااتصال بقاعدة البيانات $con
 include('db_conn.php');
 $id = 0;
+// اخذ الايدي حق الفلم
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
+
+// ارسال الامر لقاعدة البيانات
 $result = mysqli_query($con, "SELECT * FROM movies WHERE id = $id");
+// اغلاق الاتصال
 mysqli_close($con);
+
+// اخذ اول صف
 $result = mysqli_fetch_assoc($result);
 
 ?>
@@ -28,10 +35,11 @@ $result = mysqli_fetch_assoc($result);
 <body>
     <?php
 
+    // التاكد من تسجييل الدخول
     if (!isset($_COOKIE['login'])) {
+        // نقل المستخدم لصفحة تسجيل الدخول
         header("location: login.php?login");
     }
-    echo ("asd");
     ?>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
         <div class="container"><a class="navbar-brand" href="index.php" style="color: var(--bs-blue);"><br>Movies لمشاهدة الافلام<br><br></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
