@@ -141,7 +141,7 @@ if (mysqli_query($con, $query)) {
     die('filed on create database');
 }
 
-// mysqli_close($con);
+mysqli_close($con);
 
 $con = mysqli_connect($db_host, $db_user, null, $db_name);
 
