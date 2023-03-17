@@ -25,14 +25,16 @@ if (mysqli_query($connect, $query)) {
     die('filed on create table users');
 }
 
-$query = "CREATE TABLE IF NOT EXISTS category (id INTEGER PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100))";
+$query = "CREATE TABLE IF NOT EXISTS category (id INTEGER PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100)) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
 if (mysqli_query($connect, $query)) {
 } else {
     die('filed on create table category');
 }
 
-$query = "CREATE TABLE IF NOT EXISTS weapon (id INTEGER PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), category_id INTEGER, scope VARCHAR(50), madeIn VARCHAR(50), storage VARCHAR(50), storageType VARCHAR(50), color VARCHAR(50), weight VARCHAR(50))";
+$query = "CREATE TABLE IF NOT EXISTS weapon (id INTEGER PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), category_id INTEGER, image_url  VARCHAR(255) ,scope VARCHAR(50), madeIn VARCHAR(50), storage VARCHAR(50), storageType VARCHAR(50),model  VARCHAR(50) , color VARCHAR(50), weight VARCHAR(50),price FLOAT)  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;";
 if (mysqli_query($connect, $query)) {
 } else {
     die('filed on create table weapons');
 }
+
+mysqli_set_charset($connect, "utf8mb4");

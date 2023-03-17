@@ -20,11 +20,17 @@
 
     <div class="over">
         <li>
-            <a href="menu.html"> <button class="btnn">الذهاب الى السلاح</button></a>
+            <a href="menu.php"> <button class="btnn">الذهاب الى السلاح</button></a>
         </li>
-
-
-
+        <li>
+            <a href="admin-weapons.php"> <button class="btnn"> اضافة سلاح </button></a>
+        </li>
+        <li>
+            <a href="admin-category.php"> <button class="btnn"> اضافة صنف </button></a>
+        </li>
+        <li>
+            <a href="login.php"> <button class="btnn"> تسجيل الدخول </button></a>
+        </li>
     </div>
 
     </article>

@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +23,11 @@
 </head>
 
 <body>
-
+  <?php
+  include "init.php";
+  $query = "SELECT * FROM category;";
+  $data = mysqli_query($connect, $query);
+  ?>
   <div class="tm-container">
 
 
@@ -46,35 +46,19 @@
 
           <nav class="tm-site-nav">
             <ul class="tm-site-nav-ul">
-              <li class="tm-page-nav-item">
-                <a href="pistol.html" class="tm-page-link active">
-                  <i class="fas fa-glass-martini tm-page-link-icon"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;مسدسات</i>
-                  <!--      -->
+              <?php
+              foreach ($data as $row) :
+              ?>
+                <li class="tm-page-nav-item">
+                  <a href=" <?php echo 'list.php?category=' . $row['id'] ?>" class="tm-page-link active">
+                    <i class="fas fa-glass-martini tm-page-link-icon"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $row['name'] ?> </i>
+                    <!--      -->
 
-                </a>
-              </li>
+                  </a>
+                </li>
+              <?php endforeach ?>
               <!--      -->
-              <li class="tm-page-nav-item">
-                <a href="2.html" class="tm-page-link">
-                  <i class="fas fa-glass-martini tm-page-link-icon" style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;بنادق</i>
 
-                </a>
-              </li>
-              <!--      -->
-              <li class="tm-page-nav-item">
-                <a href="menu3.html" class="tm-page-link">
-                  <i class="fas fa-glass-martini tm-page-link-icon" style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;رشاش</i>
-
-                </a>
-              </li>
-              <!--      -->
-              <li class="tm-page-nav-item">
-                <a href="4.html" class="tm-page-link">
-
-                  <i class="fas fa-glass-martini tm-page-link-icon" style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;قناصات</i>
-
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
