@@ -37,6 +37,14 @@
       <div class="tm-left">
         <!--      -->
         <div class="tm-left-inner">
+          <ul>
+            <li class="tm-page-nav-item">
+              <a href="index.php" class="tm-page-link">
+                <i class="fas fa-glass-martini tm-page-link-icon" style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;السابق</i>
+
+              </a>
+            </li>
+          </ul>
           <div class="tm-site-header1">
             <!--      -->
 

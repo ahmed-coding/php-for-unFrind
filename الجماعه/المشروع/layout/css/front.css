@@ -1,199 +1,203 @@
 /* Start Main Rule */
-body{
-background-color: #f4f4f4;	
+body {
+  background-color: #f4f4f4;
 }
 
-.asterisk{
-	font-size: 30px;
-	position: absolute;
-	color: #DF1518;
-	right: 15px
+.asterisk {
+  font-size: 30px;
+  position: absolute;
+  color: #df1518;
+  right: 15px;
 }
-.header{ /*h3*/
-	color: #212529;
-	margin-bottom: 30px;
-	margin-top: 25px;
-	font-weight: bold;
-	
+.header {
+  /*h3*/
+  color: #212529;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  font-weight: bold;
 }
 a.title,
-a.categor{
-	text-decoration: none;
-	color: #0984ea;
-	padding-top: 5px;
+a.categor {
+  text-decoration: none;
+  color: #0984ea;
+  padding-top: 5px;
 }
-.desc{
-	color: #b1b1b1; 
-	margin:5px;
-	 font-weight:bold ;
-	 overflow: hidden;
-	 text-overflow:ellipsis;
-	 height:30px;
-	 white-space: nowrap;
+.desc {
+  color: #b1b1b1;
+  margin: 5px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 30px;
+  white-space: nowrap;
 }
 /* End Main Rule */
 input::placeholder {
- text-align: center
+  text-align: center;
 }
-
 
 /* Start Login*/
-.login-page  .selected{
-	color: #b22020;
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-.login-page h3{
-	color: #b1b1b1;
+.login-page .selected {
+  color: #b22020;
 }
-.login-page h3 span{
-	cursor: pointer;
+.login-page h3 {
+  color: #b1b1b1;
 }
-.login-page .signup{
-	display: none;
+.login-page h3 span {
+  cursor: pointer;
 }
-.login-page .msg,.msg{
-	padding: 10px;
-	text-align: left;
-	border-left: 5px solid #cd6858;
-	background-color: #333;
-	color: #FFF;
-	margin-bottom: 8px;
-	border-right: 1px solid #212529;
-	border-top: 1px solid #212529;
-	border-bottom: 1px solid #212529;
+.login-page .signup {
+  display: none;
 }
-.login-page .success,.success{
-	border-left: 5px solid #37bb42;
+.login-page .msg,
+.msg {
+  padding: 10px;
+  text-align: left;
+  border-left: 5px solid #cd6858;
+  background-color: #333;
+  color: #fff;
+  margin-bottom: 8px;
+  border-right: 1px solid #212529;
+  border-top: 1px solid #212529;
+  border-bottom: 1px solid #212529;
+}
+.login-page .success,
+.success {
+  border-left: 5px solid #37bb42;
 }
 /* End Login*/
 
 /* Start Bootstrap Edits */
 
-.navbar-dark .navbar-brand{
-	
-	color: #FFF;
+.navbar-dark .navbar-brand {
+  color: #fff;
 }
 
-.navbar-dark .navbar-brand:hover{
-	
-	color: #0984ea;
+.navbar-dark .navbar-brand:hover {
+  color: #0984ea;
 }
 
-
-.navbar-nav .dropdown-menu{
-	background-color: #212529;
-	border: none;
-	min-width: 11rem;
+.navbar-nav .dropdown-menu {
+  background-color: #212529;
+  border: none;
+  min-width: 11rem;
 }
 .navbar-nav .dropdown-item {
-	color: #FFFFFF;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition:  all .5s ease-in-out;
-	-o-transition:  all .5s ease-in-out;
-	transition:  all .5s ease-in-out;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-.navbar-nav .dropdown-menu :hover{
-	color: #0984e3;
-	padding-left: 20px;
-	background-color: #212529;
-		
+.navbar-nav .dropdown-menu :hover {
+  color: #0984e3;
+  padding-left: 20px;
+  background-color: #212529;
 }
-.navbar-dark .navbar-nav .nav-link:hover{
-	color: white
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: white;
 }
-.navbar-nav .dropdown-divider{
-	color: #FFFFFF;
+.navbar-nav .dropdown-divider {
+  color: #ffffff;
 }
-.navbar-nav .dropdown-divider:hover{
-	color: #0984e3;
-	background-color: #0984e3
+.navbar-nav .dropdown-divider:hover {
+  color: #0984e3;
+  background-color: #0984e3;
 }
-.navbar-nav .nav-item a:active{
-	color: white;
+.navbar-nav .nav-item a:active {
+  color: white;
 }
-
 
 /* End Bootstrap Edits */
 
 /* Start Categories Page */
-
-.item-box{
-	position:relative;
-	background-color: rgb(165 165 165);
-	padding: 5px;
-	margin: 5px;
-	background-color: #212529;
-	box-shadow: -7px 0px 8px #334;
-	border: none; 
+.item-box {
+  position: relative;
+  background-color: rgb(165 165 165);
+  padding: 5px;
+  margin: 5px;
+  background-color: #212529;
+  box-shadow: -7px 0px 8px #334;
+  border: none;
 }
-.item-box .price-tag{
-	position: absolute;
-	background-color: #333;
-	padding: 2px 10px;
-	color: rgb(42 193 88);
-	left: 5px;
-	top: 5px;
-	font-weight: bold;
-
+.item-box .price-tag {
+  position: absolute;
+  background-color: #333;
+  padding: 2px 10px;
+  color: rgb(42 193 88);
+  left: 5px;
+  top: 5px;
+  font-weight: bold;
 }
-.profile{
-	background-color: #334;
-	border: none;
-	box-shadow: none;
+.profile {
+  background-color: #334;
+  border: none;
+  box-shadow: none;
 }
-.image-user img{width: 100px; height: 100px;}
-
+.image-user img {
+  width: 100px;
+  height: 100px;
+}
 
 /* Start Profile Page */
 .information ul {
-	padding: 0;
-	margin: 0;
-	font-weight: 500;
-	font-size: 17px;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 17px;
 }
 .information ul li {
-	padding: 10px;
+  padding: 10px;
 }
-.information ul li:nth-child(odd){
-	background-color: #334;
+.information ul li:nth-child(odd) {
+  background-color: #334;
 }
-.information ul li span{
-	display: inline-block;
-	width: 150px;
+.information ul li span {
+  display: inline-block;
+  width: 150px;
 }
 
 /* End Profile Page */
-.information .card-body .edit-profile .fields .bck{background-color: #f4f4f4; color: #000;}
+.information .card-body .edit-profile .fields .bck {
+  background-color: #f4f4f4;
+  color: #000;
+}
 
 /* Start Items Page */
 
-.items{
-	background-color: #212529;
-	color: #b1b1b1;
-	min-height: 700px;
-	padding: 20px;
+.items {
+  background-color: #212529;
+  color: #b1b1b1;
+  min-height: 100vh;
+  padding: 20px;
 }
-.items h2{
-	color: #fff;
+.items h2 {
+  color: #fff;
 }
-.items p{
-	padding: 0;
-	margin: 10px 0;
-	font-size: 17px;
-	font-weight: bold;
+.items p {
+  padding: 0;
+  margin: 10px 0;
+  font-size: 17px;
+  font-weight: bold;
 }
 
-.items span{
-	display: inline-block;
-	width: 150px;
+.items span {
+  display: inline-block;
+  width: 150px;
 }
-.items ul li:nth-child(odd){
-	background-color: #334;
-	
+.items ul li:nth-child(odd) {
+  background-color: #334;
 }
-.tag-item{
-display: inline-block;
+.tag-item {
+  display: inline-block;
 
-margin-right: 5px;
-margin-top: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 /* End Items Page */

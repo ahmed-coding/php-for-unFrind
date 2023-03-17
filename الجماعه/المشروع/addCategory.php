@@ -26,10 +26,8 @@
             <a class="nav-link active" aria-current="page" href="addCategory.php">Add Category</a>
           </li>
           <div class="dropdown">
-            <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" style="margin: 6px" data-bs-toggle="dropdown" aria-expanded="false">
-            </button>
+            <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" style="margin: 6px" data-bs-toggle="dropdown" aria-expanded="false"></button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="login.php">login or signup </a></li>
               <li><a class="dropdown-item" href="logout.php">log Out</a></li>
             </ul>
           </div>
@@ -38,32 +36,29 @@
     </div>
   </nav>
 
-  <div class="container">
-    <h2 class="text-center h1 header">All Item</h2>
+  <section class="edit-profile">
+    <div class="fields">
+      <div class="container">
+        <div class="row">
+          <h3 class="text-center h1 header">Add New Category</h3>
 
-    <div class="row">
-      <div class="col-6 col-md-3">
-        <div class="img-thumbnail item-box">
-          <span class="price-tag">$5000</span><img src="admin/upload/items/932598_photo_2022-10-10_07-39-47.jpg" alt="" class="card-img" height="200px" />
-          <div class="caption">
-            <h4 class="desc" style="margin: 5px">
-              <a class="title" href="view.php">annskfksjgkj</a>
-            </h4>
-            <p class="desc">nice music</p>
-            <p style="
-                  color: #636363;
-                  margin: 5px;
-                  text-align: right;
-                  font-size: 13px;
-                  font-weight: bold;
-                ">
-              2023-02-11
-            </p>
-          </div>
+          <form role="form" action="?do=Insert" method="POST">
+            <div class="col-md-6 offset-md-3">
+              <div class="input-group mb-2 flex-nowrap">
+                <input type="text" name="name" class="form-control" placeholder="Name Of Categories" autocomplete="off" required="required" />
+              </div>
+
+              <div class="input-group mb-2">
+                <input type="text" name="description" class="form-control" placeholder="Descripe The Category" />
+              </div>
+
+              <input type="submit" value="Add Category" class="btn btn-primary btn-md w-30 d-block p-2" />
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <script src="layout/js/jquery.js"></script>
   <script src="layout/js/bootstrap.min.js"></script>

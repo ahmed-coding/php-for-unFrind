@@ -7,8 +7,6 @@ $query = "SELECT * FROM weapon WHERE category_id = $category ;";
 
 $data = mysqli_query($connect, $query);
 
-print_r($data);
-
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +72,7 @@ print_r($data);
                         <div class="tm-list">
                             <!-- |قناصه| -->
                             <div id="sniper" class="tm-list-item">
-                                <img src="img/photo_2022-18.jpg" alt="Image" class="tm-list-item-img">
+                                <img src=" <?php echo isset($row['image_url']) ? $row['image_url'] :  "img/photo_2022-18.jpg" ?>" alt="Image" class="tm-list-item-img">
                                 <div class="tm-black-bg tm-list-item-text">
                                     <h1 class="tm-list-item-name"> <?php echo $row['name'] ?><span class="tm-list-item-price"> <?php echo $row['price'] ?></span>
                                     </h1>
@@ -82,7 +80,7 @@ print_r($data);
                                         <br>رقم الموديل: <?php echo $row['model'] ?>
                                         <br>سعه المخزن: <?php echo $row['storage'] ?>
                                         <br>حجم الذخيرة : <?php echo $row['storageType'] ?>
-                                        <br>المدى الفعال : <?php echo $row['scope'] ?>
+                                        <br>المدى الفعال: <?php echo $row['scope'] ?>
                                     </p>
                                 </div>
                             </div>
