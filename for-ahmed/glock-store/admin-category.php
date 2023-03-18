@@ -36,26 +36,26 @@ if (isset($_POST['submit'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin-weapons.php"> اضافة سلاح </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin-category.php"> اضافة صنف </a>
-                    </li>
+                    <?php if (isset($_COOKIE['admin'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin-weapons.php"> اضافة سلاح </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin-category.php"> اضافة صنف </a>
+                        </li>
+                    <?php endif ?>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="login.php"> تسجيل الدخول </a>
                     </li>
-
-
                 </ul>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            User </a>
+                            <?php echo isset($_COOKIE['login']) ? $_COOKIE['user'] : "USER" ?> </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <li><a class="dropdown-item" href="logout.php">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+                            <li><?php echo isset($_COOKIE['login']) ? '<a class="dropdown-item" href="logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>' : '<a class="dropdown-item" href="login.php">Login <i class="fas fa-sign-out-alt"></i></a>' ?></li>
                         </ul>
                     </li>
 

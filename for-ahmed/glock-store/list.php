@@ -61,13 +61,9 @@ $data = mysqli_query($connect, $query);
             <div class="tm-right">
                 <main class="tm-main">
                     <!--      -->
-
                     <!-- Weapon Menu Page -->
-
-
                     <?php
-                    if ($data)
-                        foreach ($data as $row) :
+                    foreach ($data as $row) :
                     ?>
                         <div class="tm-list">
                             <!-- |قناصه| -->

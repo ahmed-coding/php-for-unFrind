@@ -9,11 +9,12 @@ if (isset($_POST['submit_login'])) {
     $pass = $_POST['password'];
 
     // Check If The User Exist In Database
+
     $sql = "SELECT *  FROM users WHERE email = '$email' AND password = '$pass' ;";
     $result = mysqli_query($connect, $sql);
     $result = mysqli_fetch_assoc($result);
     if (!$result) {
-        $errorMessage = 'User Not Found';
+        echo 'User Not Found';
     } else {
         setcookie("login", true);
         setcookie("user", $result['email']);
@@ -26,23 +27,21 @@ if (isset($_POST['submit_login'])) {
 
     $password = $_POST['password'];
     $email = $_POST['email'];
-    // $is_admin = isset($_POST['admin']) ? (bool)$_POST['admin'] : false;
-    $is_admin = (bool)$_POST['admin'];
-
+    $is_admin = false;
 
     $email_exists_query = "SELECT * FROM users WHERE email = '$email'";
 
     $email_exists_result = mysqli_query($connect, $email_exists_query);
 
     if (mysqli_num_rows($email_exists_result) > 0) {
-        $errorMessage = 'Error: email already exists';
+        echo 'Error: email already exists';
     } else {
         // insert new user record
         $insert_query = "INSERT INTO users (password, admin, email) VALUES ('$password', '$is_admin', '$email')";
         if (mysqli_query($connect, $insert_query)) {
-            $successMsg = 'Congrats You Are Now Registered User';
+            echo 'Congrats You Are Now Registered User';
         } else {
-            $errorMessage = 'Error: ' . mysqli_error($connect);
+            echo 'Error: ' . mysqli_error($connect);
         }
     }
 
@@ -76,26 +75,26 @@ if (isset($_POST['submit_login'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin-weapons.php"> اضافة سلاح </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin-category.php"> اضافة صنف </a>
-                    </li>
+                    <?php if (isset($_COOKIE['admin'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin-weapons.php"> اضافة سلاح </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin-category.php"> اضافة صنف </a>
+                        </li>
+                    <?php endif ?>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="login.php"> تسجيل الدخول </a>
                     </li>
-
-
                 </ul>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            User </a>
+                            <?php echo isset($_COOKIE['login']) ? $_COOKIE['user'] : "USER" ?> </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <li><a class="dropdown-item" href="logout.php">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+                            <li><?php echo isset($_COOKIE['login']) ? '<a class="dropdown-item" href="logout.php">Logout <i class="fas fa-sign-out-alt"></i></a>' : '<a class="dropdown-item" href="login.php">Login <i class="fas fa-sign-out-alt"></i></a>' ?></li>
                         </ul>
                     </li>
 
@@ -127,7 +126,7 @@ if (isset($_POST['submit_login'])) {
 
                             </div>
 
-                            <input class="btn btn-primary  w-100" type="submit" name="submit_login" value="login" />
+                            <input class="btn btn-primary  w-100" type="submit" name="submit_login" value="تسجيل دخول" />
                             <?php
                             if ($errorMessage) {
                                 '<p class="text-center msg">' . $errorMessage . '</p>';
@@ -170,14 +169,14 @@ if (isset($_POST['submit_login'])) {
                                 <input class="form-control" type="password" name="password" placeholder="Password" autocomplete="new-password" />
 
                             </div>
-                            <div class="form-check">
+                            <!-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="admin" value="" id="flexCheckDefault" style="float: none; margin-left: 0;">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Admin
                                 </label>
-                            </div>
+                            </div> -->
 
-                            <input class="btn btn-primary  w-100" type="submit" name="submit_signup" value="login" />
+                            <input class="btn btn-primary  w-100" type="submit" name="submit_signup" value="انشاء حساب" />
                             <?php
 
                             ?>

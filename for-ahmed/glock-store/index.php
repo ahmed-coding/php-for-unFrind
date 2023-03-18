@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,12 +20,14 @@
         <li>
             <a href="menu.php"> <button class="btnn">الذهاب الى السلاح</button></a>
         </li>
-        <li>
-            <a href="admin-weapons.php"> <button class="btnn"> اضافة سلاح </button></a>
-        </li>
-        <li>
-            <a href="admin-category.php"> <button class="btnn"> اضافة صنف </button></a>
-        </li>
+        <?php if (isset($_COOKIE["admin"])) : ?>
+            <li>
+                <a href="admin-weapons.php"> <button class="btnn"> اضافة سلاح </button></a>
+            </li>
+            <li>
+                <a href="admin-category.php"> <button class="btnn"> اضافة صنف </button></a>
+            </li>
+        <?php endif ?>
         <li>
             <a href="login.php"> <button class="btnn"> تسجيل الدخول </button></a>
         </li>
