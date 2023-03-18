@@ -22,14 +22,14 @@ if (mysqli_query($con, $sql)) {
 } else {
     die("Error creating table users: " . mysqli_error($con));
 }
-$sql = "CREATE TABLE IF NOT EXISTS category (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), image_url VARCHAR(255), description VARCHAR(255))";
+$sql = "CREATE TABLE IF NOT EXISTS category (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), description VARCHAR(255))";
 
 if (mysqli_query($con, $sql)) {
 } else {
     die("Error creating table category: " . mysqli_error($con));
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS product (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), price FLOAT, category_id INT, image_url VARCHAR(255), addedBy VARCHAR(50), created_time  VARCHAR(50),made_in  VARCHAR(50))";
+$sql = "CREATE TABLE IF NOT EXISTS product (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), price FLOAT, category_id INT, image_url VARCHAR(255), addedBy VARCHAR(50), created_time  VARCHAR(50),made_in  VARCHAR(50),description  VARCHAR(255))";
 
 if (mysqli_query($con, $sql)) {
 } else {
