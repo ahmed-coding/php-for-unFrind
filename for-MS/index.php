@@ -25,7 +25,7 @@ mysqli_close($con);
 
 <body dir="ltr" style="background: none;">
 
-    <!-- <div class="header"></div> -->
+    <!-- <div class="header"> </div> -->
 
     <!-- <?php
             if (!isset($_COOKIE['login'])) {
